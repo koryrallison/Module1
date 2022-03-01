@@ -16,7 +16,12 @@ public class Exercises {
 	 array2List( {"Left", "Right", "Forward", "Back"} )  ->  ["Left", "Right", "Forward", "Back"]
 	 */
 	public List<String> array2List(String[] stringArray) {
-		return null;
+		ArrayList<String> arrayToList = new ArrayList<String>();
+		for(String item : stringArray){
+			arrayToList.add(item);
+		}
+
+		return arrayToList;
 	}
 
 	/*
@@ -26,7 +31,8 @@ public class Exercises {
 	 list2Array( ["Left", "Right", "Forward", "Back"] )  ->  {"Left", "Right", "Forward", "Back"}
 	 */
 	public String[] list2Array(List<String> stringList) {
-		return null;
+		String[] listToArray = new String[stringList.size()];
+		return stringList.toArray(listToArray);
 	}
 
 	/*
@@ -37,7 +43,13 @@ public class Exercises {
 	 no4LetterWords( {"Jack", "Jill", "Jane", "John", "Jim"} )  ->  ["Jim"]
 	 */
 	public List<String> no4LetterWords(String[] stringArray) {
-		return null;
+		ArrayList<String> noFourLetters = new ArrayList<String>();
+		for(String item: stringArray){
+			if(item.length() != 4){
+				noFourLetters.add(item);
+			}
+		}
+		return noFourLetters;
 	}
 
 	/*
@@ -47,7 +59,14 @@ public class Exercises {
 	 arrayInt2ListDouble( {84, 99, 3285, 13, 877} ) -> [42, 49.5, 1642.5, 6.5, 438.5]
 	 */
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
-		return null;
+		Double intAsDouble = 0.0;
+
+		ArrayList<Double> arrayOfDoubles = new ArrayList<Double>();
+		for(int starting : intArray){
+			intAsDouble = (double) starting / 2;
+			arrayOfDoubles.add(intAsDouble);
+		}
+		return arrayOfDoubles;
 	}
 
 	/*
@@ -57,7 +76,13 @@ public class Exercises {
 	 findLargest( [34070, 1380, 81238, 7782, 234, 64362, 627] ) -> 81238
 	 */
 	public Integer findLargest(List<Integer> integerList) {
-		return null;
+		int largestNumber = 0;
+		for(int number : integerList){
+			if(number > largestNumber){
+				largestNumber = number;
+			}
+		}
+		return largestNumber;
 	}
 
 	/*
@@ -67,7 +92,13 @@ public class Exercises {
 	 oddOnly( {734, 233, 782, 811, 3, 9999} ) -> [233, 811, 3, 9999]
 	 */
 	public List<Integer> oddOnly(Integer[] integerArray) {
-		return null;
+		ArrayList<Integer> onlyOdds = new ArrayList<Integer>();
+		for(int number : integerArray){
+			if(number % 2 != 0){
+				onlyOdds.add(number);
+			}
+		}
+		return onlyOdds;
 	}
 
 	/*
@@ -78,7 +109,17 @@ public class Exercises {
 	 foundIntTwice( [9, 23, 44, 2, 88, 44], 44) -> true
 	 */
 	public boolean foundIntTwice(List<Integer> integerList, int intToFind) {
-		return false;
+		boolean isMoreThanTwo = false;
+		int counter = 0;
+		for(int number : integerList){
+			if(number == intToFind){
+				counter += 1;
+			}
+		}
+		if(counter >= 2){
+			isMoreThanTwo = true;
+		}
+		return isMoreThanTwo;
 	}
 
 	/*
@@ -94,7 +135,22 @@ public class Exercises {
 	HINT: To convert an Integer x to a String, you can use x.toString() in your code. For example, if x = 1, then x.toString() returns "1."
 	 */
 	public List<String> fizzBuzzList(Integer[] integerArray) {
-		return null;
+		ArrayList<String> intsAsStrings = new ArrayList<String>();
+		for(Integer number : integerArray) {
+			if(number % 3 == 0 && number % 5 == 0){
+				intsAsStrings.add("FizzBuzz");
+			}
+			else if(number % 3 == 0) {
+				intsAsStrings.add("Fizz");
+			}
+			else if(number % 5 == 0) {
+				intsAsStrings.add("Buzz");
+			}
+			else {
+				intsAsStrings.add(number.toString());
+			}
+		}
+		return intsAsStrings;
 	}
 
 	/*
@@ -105,7 +161,22 @@ public class Exercises {
 	 interleaveLists( [1, 2, 3], [4, 5, 6] )  ->  [1, 4, 2, 5, 3, 6]
 	 */
 	public List<Integer> interleaveLists(List<Integer> listOne, List<Integer> listTwo) {
-		return null;
+
+		ArrayList<Integer> wovenNumbers = new ArrayList<Integer>();
+
+		// Using Math Max to compare the list sizes and use the longer one to run the loop.
+
+		for (int i = 0; i < Math.max(listOne.size(), listTwo.size()); i++){
+			// checks to see if there is another list 1 number and if so adds it to the new list
+			if (i < listOne.size()){
+				wovenNumbers.add(listOne.get(i));
+			}
+			// chest to see if there is another list 2 number and if so adds it to the new list
+			if (i < listTwo.size()){
+				wovenNumbers.add(listTwo.get(i));
+			}
+		}
+		return wovenNumbers;
 	}
 
 }
