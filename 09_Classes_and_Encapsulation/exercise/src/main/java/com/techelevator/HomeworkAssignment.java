@@ -6,28 +6,17 @@ public class HomeworkAssignment {
     private String submitterName;
 
     public String getLetterGrade(){
-        int gradePoint = (earnedMarks / possibleMarks) * 100;
-
-        String letterGrade = "";
-        if (gradePoint >= 90){
-            letterGrade = "A";
-            return letterGrade;
+        if (((1.0 * earnedMarks / possibleMarks) * 100) >= 90) {
+            return "A";
+        } else if ((((double) earnedMarks / possibleMarks) * 100) >= 80) {
+            return "B";
+        } else if (((1.0 * earnedMarks / possibleMarks) * 100) >= 70) {
+            return "C";
+        } else if (((1.0 * earnedMarks / possibleMarks) * 100) >= 60) {
+            return "D";
+        } else{
+            return "F";
         }
-        if (gradePoint >= 80){
-            letterGrade = "B";
-            return letterGrade;
-        }
-        if (gradePoint >= 70){
-            letterGrade = "C";
-            return letterGrade;
-        }
-        if (gradePoint >= 60) {
-            letterGrade = "D";
-        }
-        else {
-            letterGrade = "F";
-        }
-        return letterGrade;
 
     }
 
@@ -50,6 +39,10 @@ public class HomeworkAssignment {
 
     public String getSubmitterName() {
         return submitterName;
+    }
+
+    public void setSubmitterName() {
+        this.submitterName = submitterName;
     }
 
 }
