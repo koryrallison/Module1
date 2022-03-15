@@ -29,6 +29,11 @@ public class BankAccount {
         return balance;
     }
 
+    public int withdraw(int amountToWithdraw, int fee) {
+        balance = (balance - amountToWithdraw) - fee;
+        return balance;
+    }
+
     // getters
     public String getAccountHolderName() {
         return accountHolderName;
