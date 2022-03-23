@@ -1,6 +1,6 @@
 package com.techelevator;
 
-public class Movie extends MediaItem {
+public class Movie extends MediaItem implements Purchasable{
     private String rating;
     private int runLength;
 

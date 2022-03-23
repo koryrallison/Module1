@@ -1,9 +1,11 @@
 package com.techelevator;
 
+import java.util.List;
+
 /**
  * Bookstore
  */
-public class Bookstore {
+public class Bookstore implements Purchasable{
 
     public static void main(String[] args) {
         System.out.println("Welcome to the Tech Elevator Bookstore");
@@ -32,6 +34,17 @@ public class Bookstore {
         Movie airplane = new Movie("Airplane!", "PG", 88, 14.99);
         shoppingCart.add(airplane);
 
+        // Coffee stuff here
+        Coffee myCoffee = new Coffee("Extra-large", "Dark Roast", new String[] {"Creme"}, 3.99);
+        Coffee myFriendsCoffee = new Coffee("Medium", "House Blend", new String[]{"Soy milk", "Sugar"}, 2.79);
+        shoppingCart.add(myCoffee);
+        shoppingCart.add(myFriendsCoffee);
+
         System.out.println(shoppingCart.receipt());
+    }
+
+    @Override
+    public double getPrice() {
+        return 0;
     }
 }
