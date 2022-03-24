@@ -128,7 +128,7 @@ For the sake of simplicity, assume trucks always drive at their top speed of 60 
 ```java
 package com.shippingcompany.delivery;
 
-public class TruckDelivery extends Delivery {
+public class TruckDelivery {
 
     /**
      * The top speed of the truck represented in mph
@@ -156,7 +156,7 @@ Drone delivery works like the truck delivery option with a little wrinkle. The s
 ```java
 package com.shippingcompany.delivery;
 
-public class DroneDelivery extends Delivery {
+public class DroneDelivery {
 
     /**
      * The top speed of the drone represented in mph
@@ -180,7 +180,7 @@ All air deliveries take one day. Remember that `getDuration()` method returns mi
 ```java
 package com.shippingcompany.delivery;
 
-public class AirDelivery extends Delivery {
+public class AirDelivery {
 
     public static final int ONE_DAY_IN_MINUTES = 24 * 60;
 
